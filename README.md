@@ -11,11 +11,11 @@
 
 ---
 
-# 1. Запуск Jenkins
+## 1. Запуск Jenkins
 
 Було перевірено стан служби Jenkins через `systemctl status jenkins`.
 
-![Jenkins service](Screenshots/Screenshot 2026-05-27 214828.png)
+![Jenkins service](<Screenshots/Screenshot 2026-05-27 214828.png>)
 
 На скріншоті видно:
 
@@ -33,11 +33,11 @@
 http://10.0.2.15:8080
 ```
 
-![Jenkins UI](Screenshots/Screenshot 2026-05-27 215025.png)
+![Jenkins UI](<Screenshots/Screenshot 2026-05-27 215025.png>)
 
 ---
 
-# 2. Налаштування SSH-обміну ключами
+## 2. Налаштування SSH-обміну ключами
 
 Для організації безпарольного підключення між Jenkins та сервером вебсервера було створено SSH-ключі.
 
@@ -47,7 +47,7 @@ http://10.0.2.15:8080
 ssh-keygen
 ```
 
-![SSH key generation](Screenshots/Screenshot 2026-05-27 215111.png)
+![SSH key generation](<Screenshots/Screenshot 2026-05-27 215111.png>)
 
 Після генерації ключі були передані на сервер з вебсервісом.
 
@@ -57,7 +57,7 @@ ssh-keygen
 
 Було виконано SSH-підключення до другої машини.
 
-![SSH connection](Screenshots/Screenshot 2026-05-27 215704.png)
+![SSH connection](<Screenshots/Screenshot 2026-05-27 215704.png>)
 
 Підключення виконано успішно.
 
@@ -76,7 +76,7 @@ sudo chmod -R g+rw /var/www
 
 ---
 
-# 3. Створення pipeline для деплою контенту
+## 3. Створення pipeline для деплою контенту
 
 Було створено Jenkins Job для автоматичного оновлення контенту вебсервера.
 
@@ -87,7 +87,7 @@ echo "Go go go"
 echo "<html><body><h1>Hello World</h1></body></html>" > index.html
 ```
 
-![Build step](Screenshots/Screenshot 2026-05-27 215228.png)
+![Build step](<Screenshots/Screenshot 2026-05-27 215228.png>)
 
 ---
 
@@ -95,7 +95,7 @@ echo "<html><body><h1>Hello World</h1></body></html>" > index.html
 
 Після запуску Job Jenkins успішно виконав build.
 
-![Console output](Screenshots/Screenshot 2026-05-27 215321.png)
+![Console output](<Screenshots/Screenshot 2026-05-27 215321.png>)
 
 У консолі видно:
 
@@ -111,7 +111,7 @@ echo "<html><body><h1>Hello World</h1></body></html>" > index.html
 
 * `Publish Over SSH`
 
-![Plugin installation](Screenshots/Screenshot 2026-05-27 215453.png)
+![Plugin installation](<Screenshots/Screenshot 2026-05-27 215453.png>)
 
 ---
 
@@ -119,7 +119,7 @@ echo "<html><body><h1>Hello World</h1></body></html>" > index.html
 
 Після запуску pipeline Jenkins виконав передачу файлу на сервер через SSH.
 
-![Deploy success](Screenshots/Screenshot 2026-05-27 215743.png)
+![Deploy success](<Screenshots/Screenshot 2026-05-27 215743.png>)
 
 У логах видно:
 
@@ -133,7 +133,7 @@ echo "<html><body><h1>Hello World</h1></body></html>" > index.html
 
 Після деплою сторінка стала доступною через браузер.
 
-![Hello World page](Screenshots/Screenshot 2026-05-27 215807.png)
+![Hello World page](<Screenshots/Screenshot 2026-05-27 215807.png>)
 
 На сторінці відображається:
 
@@ -143,7 +143,7 @@ Hello World
 
 ---
 
-# 4. Створення pipeline зі stage-ами
+## 4. Створення pipeline зі stage-ами
 
 Було створено другий Jenkins Pipeline для демонстрації stage-based pipeline.
 
@@ -159,7 +159,7 @@ Pipeline складався зі stage-ів:
 
 ## Відображення проходження stage-ів
 
-![Pipeline stages](Screenshots/Screenshot 2026-05-27 221016.png)
+![Pipeline stages](<Screenshots/Screenshot 2026-05-27 221016.png>)
 
 На графіку видно:
 
@@ -169,7 +169,7 @@ Pipeline складався зі stage-ів:
 
 ---
 
-# Висновок
+## Висновок
 
 У ході роботи було:
 
